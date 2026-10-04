@@ -1,0 +1,15 @@
+# Logs and temp
+*.log
+*.pid
+.last_git_sync
+page_regen.log
+agent_daemon.log
+# Backups
+ev_tracker_backup_*.db
+# Test artifacts
+test_results.md
+status_1_2_3.md
+share_note.md
+mobile_reminder.md
+price_scrape_stub.md
+price_trend.md
