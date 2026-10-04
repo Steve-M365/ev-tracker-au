@@ -39,6 +39,7 @@ tr:hover td{background:#f6f9fc}
 .action-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
 .action-row a{display:inline-block;padding:8px 16px;border-radius:6px;background:#533afd;color:#fff;text-decoration:none;font-size:13px;font-weight:500;box-shadow:0 15px 35px rgba(83,58,253,0.25);transition:background .15s ease}
 .action-row a:hover{background:#4434d4}
+.action-row a.secondary{background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);box-shadow:none}
 .nav{margin-top:40px;padding-top:20px;border-top:1px solid #e5edf5;font-size:13px;color:#64748d;display:flex;gap:18px;flex-wrap:wrap}
 .nav a{color:#533afd;text-decoration:none;font-weight:500;font-size:13px}
 .footer{margin-top:56px;padding-top:24px;border-top:1px solid #e5edf5;font-size:12px;color:#64748d}
@@ -66,17 +67,36 @@ tr:hover td{background:#f6f9fc}
 </style>
 
 <div id="main" class="container" role="main">
-<header>
-  <span class="brand">EV Tracker — Melbourne, VIC · Updated Oct 4 2026</span>
-  <h1>Compare, track & decide on <em>EVs</em></h1>
-  <p class="subtitle">Verified Australian pricing, range, charging and incentives. 83 models tracked. 21 upcoming releases. 5 price records. 3 open alerts (sales, rates, FBT).</p>
-</header>
+
+<section class="hero" style="position:relative;background:linear-gradient(135deg,#061b31 0%,#1a237e 50%,#533afd 100%);border-radius:6px;padding:48px 32px;margin-bottom:52px;overflow:hidden;box-shadow:0 30px 45px -30px rgba(50,50,93,0.3)">
+  <div style="position:relative;z-index:2;max-width:640px">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.7);font-weight:600;margin-bottom:12px">Melbourne · VIC · Drive-away prices</div>
+    <h1 style="font-size:52px;font-weight:300;letter-spacing:-1.8px;color:#fff;margin-bottom:12px;line-height:1.05">EV Tracker <em style="font-style:normal;color:rgba(255,255,255,0.9)">Australia</em></h1>
+    <p style="font-size:18px;color:rgba(255,255,255,0.8);font-weight:300;margin-bottom:24px;max-width:520px">Verified pricing, range, charging and incentives. 83 models tracked. Updated daily.</p>
+    <div class="action-row" style="margin-top:0">
+      <a href="all_vehicles.html" style="background:#fff;color:#061b31;box-shadow:0 15px 35px rgba(0,0,0,0.2)">Browse all EVs →</a>
+      <a href="compare.html" style="background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.3);box-shadow:none">Compare 3 →</a>
+    </div>
+  </div>
+  <!-- Hero SVG illustration: stylised EV silhouette + charging plug -->
+  <div style="position:absolute;right:-20px;bottom:-40px;opacity:0.15;pointer-events:none" aria-hidden="true">
+    <svg width="420" height="240" viewBox="0 0 420 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="80" width="280" height="100" rx="24" fill="white"/>
+      <circle cx="110" cy="180" r="32" fill="white"/>
+      <circle cx="250" cy="180" r="32" fill="white"/>
+      <rect x="80" y="40" width="180" height="60" rx="12" fill="white"/>
+      <path d="M340 120h40v20h-40z" fill="white"/>
+      <path d="M360 80h10v40h-10z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
 
 <section class="summary-grid">
-  <div class="summary-card"><div class="label">Best Value SUV</div><h3>BYD Sealion 7 Premium</h3><p>~$62k · 482 km · 150 kW DC · 82.56 kWh</p></div>
-  <div class="summary-card"><div class="label">Longest Range</div><h3>Kia EV5 Air LR</h3><p>$59,990 DA · 555 km · 140 kW · 88.1 kWh</p></div>
-  <div class="summary-card"><div class="label">Best AWD Performance</div><h3>BYD Sealion 7 Performance</h3><p>~$72k · 456 km · 390 kW AWD</p></div>
-  <div class="summary-card"><div class="label">Tax-Efficient Lease</div><h3>Novated Lease (FBT Exempt)</h3><p>Eligible EVs under $89,332 LCT · ~34.5% after-tax saving</p></div>
+  <div class="summary-card"><div class="label" style="display:flex;align-items:center;gap:8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Best Value SUV</div><h3>BYD Sealion 7 Premium</h3><p>~$62k · 482 km · 150 kW DC · 82.56 kWh</p></div>
+  <div class="summary-card"><div class="label" style="display:flex;align-items:center;gap:8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Longest Range</div><h3>Kia EV5 Air LR</h3><p>$59,990 DA · 555 km · 140 kW · 88.1 kWh</p></div>
+  <div class="summary-card"><div class="label" style="display:flex;align-items:center;gap:8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Best AWD Performance</div><h3>BYD Sealion 7 Performance</h3><p>~$72k · 456 km · 390 kW AWD</p></div>
+  <div class="summary-card"><div class="label" style="display:flex;align-items:center;gap:8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Tax-Efficient Lease</div><h3>Novated Lease (FBT Exempt)</h3><p>Eligible EVs under $89,332 LCT · ~34.5% after-tax saving</p></div>
 </section>
 
 <section class="section">
@@ -99,7 +119,7 @@ tr:hover td{background:#f6f9fc}
   <h2>Deals & Incentives</h2>
   <div class="table-wrap" style="margin-bottom:12px">
   <table>
-  <thead><tr><th>Offer</th><th>Details</th><th>Expiry / Source</th></tr></thead>
+  <thead><tr><th>🏷️ Offer</th><th>📋 Details</th><th>📅 Expiry / Source</th></tr></thead>
   <tbody>
   <tr><td>Kia EV5 Air LR</td><td>$59,990 drive-away (free on-road costs included)</td><td>Offer to 31 Aug 2026 · kia.com.au</td></tr>
   <tr><td>BYD Sealion 7 / Seal / Shark 6</td><td>Drive-away deals (free ORCs) for Aug–Sep 2026 orders</td><td>1 Aug – 30 Sep 2026 · thebeep.com.au</td></tr>
@@ -112,9 +132,9 @@ tr:hover td{background:#f6f9fc}
 <section class="section">
   <h2>Watchlist & Upcoming</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">
-    <div class="summary-card"><h3>Watchlist</h3><p>Tesla pricing (unverified), Hyundai Ioniq 5/6, MG4 / ZS EV, BYD Sealion 8 ($56,990 DA offer), XPeng G6.</p></div>
-    <div class="summary-card"><h3>Upcoming (21 tracked)</h3><p>Model Y L 6-seat ($74,900 Q2 2026), MG 4 FWD update (Late 2026), Nissan Leaf Gen 3 (Late 2026/2027), Mazda 6e (&lt;$55k), BMW iX3 Neue Klasse (Early 2027), Hyundai Ioniq 3 (Early 2027), Smart #5 (Late 2026), Volvo EX60 (Late 2026), Toyota C-HR EV (Mid-2027), Zeekr 7GT (Q4 2026 / Q1 2027).</p></div>
-    <div class="summary-card"><h3>Changed Since Last Run</h3><p>First full run (Oct 4 2026). DB rebuilt: 84 unique EVs. Upcoming: 21 releases. Price tracking: 5 records. Watchlist verified. Next run: verify Kia offer expiry and Tesla pricing updates.</p></div>
+    <div class="summary-card"><h3>👁️ Watchlist</h3><p>Tesla pricing (unverified), Hyundai Ioniq 5/6, MG4 / ZS EV, BYD Sealion 8 ($56,990 DA offer), XPeng G6.</p></div>
+    <div class="summary-card"><h3>🚗 Upcoming (21 tracked)</h3><p>Model Y L 6-seat ($74,900 Q2 2026), MG 4 FWD update (Late 2026), Nissan Leaf Gen 3 (Late 2026/2027), Mazda 6e (&lt;$55k), BMW iX3 Neue Klasse (Early 2027), Hyundai Ioniq 3 (Early 2027), Smart #5 (Late 2026), Volvo EX60 (Late 2026), Toyota C-HR EV (Mid-2027), Zeekr 7GT (Q4 2026 / Q1 2027).</p></div>
+    <div class="summary-card"><h3>🔄 Changed Since Last Run</h3><p>First full run (Oct 4 2026). DB rebuilt: 84 unique EVs. Upcoming: 21 releases. Price tracking: 5 records. Watchlist verified. Next run: verify Kia offer expiry and Tesla pricing updates.</p></div>
   </div>
 </section>
 
