@@ -166,3 +166,17 @@
   alerts: 3 rows
   Open alerts: 3
   Next cycle in 60s
+[2026-10-04 13:47:57.868472] Agent running — DB check + refresh cycle
+  price_history: 5 rows
+  full_market: 110 rows
+  upcoming_models: 21 rows
+  alerts: 3 rows
+  Open alerts: 3
+  Next cycle in 60s
+[2026-10-04 13:48:57.869066] Agent running — DB check + refresh cycle
+  price_history: 5 rows
+  full_market: 110 rows
+  upcoming_models: 21 rows
+  alerts: 3 rows
+  Open alerts: 3
+  Next cycle in 60s
