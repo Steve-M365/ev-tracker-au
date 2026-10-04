@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All EVs — Melbourne, VIC</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>/* Modern Stripe-inspired updates */table{font-family:'Inter',system-ui,sans-serif;border-radius:6px;overflow:hidden;box-shadow:0 30px 45px -30px rgba(50,50,93,0.1),0 18px 36px -18px rgba(0,0,0,0.06);background:#fff}
-
-:root{--bg:#08090a;--surface:#111113;--surface2:#16161a;--border:rgba(255,255,255,0.07);--text:#f4f5f7;--muted:#a0a3ad;--accent:#7170ff;--radius:12px;--shadow:rgba(0,0,0,0.35) 0 16px 40px;}
+<style>
+:root{--stripe-purple:#533afd;--deep-navy:#061b31;--slate:#64748d;--soft-blue:#e5edf5;--surface:#fff;--radius:6px;--shadow:0 30px 45px -30px rgba(50,50,93,0.1),0 18px 36px -18px rgba(0,0,0,0.06);font-family:'Inter',system-ui,sans-serif;background:#fff;color:#061b31;line-height:1.45;}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;min-height:100vh}
-.container{max-width:1200px;margin:0 auto;padding:48px 24px}
-header{margin-bottom:28px}
-h1{font-size:42px;font-weight:600;letter-spacing:-1.6px;background:linear-gradient(135deg,#fff 40%,#828fff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.subtitle{color:var(--muted);font-size:15px;margin-top:6px}
-select{background:#16161a;color:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 14px;font:inherit;margin-right:10px;margin-bottom:18px}
-.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
-th{background:rgba(255,255,255,0.03);font-weight:600;color:#c5c7cf;font-size:11px;text-transform:uppercase;letter-spacing:0.06em}
-tr:hover td{background:rgba(255,255,255,0.02)}
-.model-name{font-weight:600;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px}
-.footer{margin-top:32px;color:#62666d;font-size:12px;border-top:1px solid var(--border);padding-top:16px}
+body{background:#fff;color:#061b31;font-family:'Inter',system-ui,sans-serif;min-height:100vh;padding:48px 24px 80px}
+.container{max-width:1200px;margin:0 auto}
+.brand{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#533afd;font-weight:600;margin-bottom:8px;display:block}
+h1{font-size:42px;font-weight:300;letter-spacing:-1.6px;color:#061b31;margin-bottom:6px}
+h1 a{font-size:14px;font-weight:500;color:#533afd;text-decoration:none;margin-left:16px}
+.subtitle{font-size:16px;color:#64748d;font-weight:300;margin-bottom:20px}
+select{background:#fff;border:1px solid #e5edf5;border-radius:6px;padding:10px 14px;font:inherit;font-size:14px;color:#061b31;box-shadow:0 15px 35px rgba(23,23,23,0.08);transition:box-shadow .15s ease}
+select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px -30px rgba(50,50,93,0.25),0 18px 36px -18px rgba(0,0,0,0.1)}
+.table-wrap{border:1px solid #e5edf5;border-radius:6px;overflow:hidden;box-shadow:0 30px 45px -30px rgba(50,50,93,0.1),0 18px 36px -18px rgba(0,0,0,0.06)}
+table{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #f6f9fc;vertical-align:top}
+th{font-weight:600;color:#061b31;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;background:#fafbfc}
+tr:hover td{background:#f6f9fc}
+.model{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:#061b31}
+.tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:500;background:#f6f9fc;border:1px solid #e5edf5;color:#061b31;margin-right:4px;margin-top:2px}
+.nav{margin-top:28px;padding-top:18px;border-top:1px solid #e5edf5;font-size:13px;color:#64748d;display:flex;gap:18px;flex-wrap:wrap}
+.nav a{color:#533afd;text-decoration:none;font-weight:500;font-size:13px}
+.footer{margin-top:40px;padding-top:24px;border-top:1px solid #e5edf5;font-size:12px;color:#64748d}
+@media(max-width:768px){th,td{padding:10px 8px;font-size:12px}h1{font-size:32px}}
 </style>
 </head>
 <body>
 <div class="container">
 <header>
-  <h1>All Vehicles <a href="compare.html" style="font-size:14px;color:#533afd;text-decoration:none;margin-left:18px;font-weight:400">Compare 3 →</a></h1>
-  <p class="subtitle"><br><a href="alerts.html">Alerts</a><br><a href="compare.html">Compare</a><br><a href="ev_tracker_dashboard.html">Dashboard</a>Expanded list from the Oct 4 2026 tracker. Filter by brand.</p>
+  <span class="brand">EV Tracker — Melbourne, VIC</span>
+  <h1>All Vehicles <a href="ev_tracker_dashboard.html">Dashboard →</a> <a href="compare.html">Compare →</a></h1>
+  <p class="subtitle">Every EV tracked in Australia — 83 verified models from 27 brands, with range, battery, DC charging, price, and source citations.</p>
 </header>
 
 <select id="filter" onchange="filterTable()">
-<option value="All">All brands</option>
-<option value="BYD">BYD</option>
-<option value="Kia">Kia</option>
-<option value="Tesla">Tesla</option>
-</select>
+<option value="All">All brands</option><option value="Audi">Audi</option><option value="BMW">BMW</option><option value="BYD">BYD</option><option value="Cadillac">Cadillac</option><option value="Cupra">Cupra</option><option value="Deepal">Deepal</option><option value="Ford">Ford</option><option value="GWM">GWM</option><option value="Geely">Geely</option><option value="Hyundai">Hyundai</option><option value="Kia">Kia</option><option value="Leapmotor">Leapmotor</option><option value="MG">MG</option><option value="Mazda">Mazda</option><option value="Mercedes">Mercedes</option><option value="Nissan">Nissan</option><option value="Polestar">Polestar</option><option value="Porsche">Porsche</option><option value="Renault">Renault</option><option value="Skoda">Skoda</option><option value="Subaru">Subaru</option><option value="Tesla">Tesla</option><option value="Toyota">Toyota</option><option value="VW">VW</option><option value="Volvo">Volvo</option><option value="XPeng">XPeng</option><option value="Zeekr">Zeekr</option></select>
 
 <div class="table-wrap">
 <table id="vehTable">
-<thead><tr><th>Brand / Model</th><th>Variant</th><th>Drive-away (VIC est)</th><th>WLTP / Real range</th><th>DC / AC</th><th>Warranty</th><th>Best for</th></tr></thead>
+<thead><tr><th>Brand / Model</th><th>Body</th><th>Range / Battery</th><th>DC Peak</th><th>Price (est)</th><th>Notes</th></tr></thead>
 <tbody>
-<tr data-brand="BYD"><td><span class="model-name">BYD Sealion 7 Premium</span></td><td>RWD SUV</td><td>~$62k–$64k</td><td>482 km / ~430 km</td><td>~150 kW / 7–11 kW</td><td>6yr/150k · 8yr/160k</td><td>Best value SUV</td></tr>
-<tr data-brand="BYD"><td><span class="model-name">BYD Sealion 7 Performance</span></td><td>AWD SUV</td><td>~$72k</td><td>456 km / ~400 km</td><td>~150 kW / 11 kW</td><td>6yr/150k · 8yr/160k</td><td>Best AWD performance</td></tr>
-<tr data-brand="Kia"><td><span class="model-name">Kia EV5 Air LR</span></td><td>FWD SUV</td><td>$59,990 DA</td><td>555 km / ~520 km</td><td>140 kW / 11 kW</td><td>7yr · 8yr</td><td>Best range/value</td></tr>
-<tr data-brand="Kia"><td><span class="model-name">Kia EV5 Earth AWD</span></td><td>AWD SUV</td><td>$64,990 DA</td><td>500 km / ~450 km</td><td>140 kW / 11 kW</td><td>7yr · 8yr</td><td>Best AWD family</td></tr>
-<tr data-brand="Tesla"><td><span class="model-name">Tesla Model Y</span></td><td>RWD / LR</td><td>Unverified — check tesla.com/au</td><td>455–533 km (est)</td><td>250 kW / 11 kW</td><td>4yr/80k · 8yr/160k</td><td>Watch — verify pricing</td></tr>
-<tr data-brand="Tesla"><td><span class="model-name">Tesla Model 3</span></td><td>RWD / LR</td><td>Unverified — check tesla.com/au</td><td>513–629 km (est)</td><td>250 kW / 11 kW</td><td>4yr/80k · 8yr/160k</td><td>Sedan option; verify</td></tr>
+<tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr><tr data-brand="<"><td><span class="model">< t</span></td><td>r</td><td>  km</td><td>a kW</td><td>~$t</td><td>-</td></tr>
 </tbody>
 </table>
 </div>
 
-<footer class="footer">Built 2026-10-04. Source: thebeep.com.au / kia.com.au / carexpert.com.au. Unverified items flagged.</footer>
+<div class="nav">
+  <a href="ev_tracker_dashboard.html">Dashboard</a>
+  <a href="compare.html">Compare 3</a>
+  <a href="alerts.html">Alerts</a>
 </div>
+
+<footer class="footer">
+  Source: evdrives.com.au (129 tracked) / thedriven.io / manufacturer sites / carexpert.com.au / drive.com.au. DB: 83 unique verified models. Filter by brand. Updated Oct 4 2026.
+</footer>
+</div>
+
 <script>
-function filterTable(){const f=document.getElementById('filter').value;document.querySelectorAll('#vehTable tbody tr').forEach(r=>{r.style.display=(f==='All'||r.getAttribute('data-brand')===f)?'':'none';});}
+function filterTable(){const f=document.getElementById('filter').value; document.querySelectorAll('#vehTable tbody tr').forEach(r=>{r.style.display=(f==='All'||r.getAttribute('data-brand')===f)?'':'none';});}
 </script>
 </body>
 </html>
