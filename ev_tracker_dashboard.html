@@ -61,7 +61,7 @@ tr:hover td{background:#f6f9fc}
 @media (max-width: 640px) {
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
-  input#navToggle:checked + label + div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
 }
 </style>
 
@@ -130,6 +130,7 @@ tr:hover td{background:#f6f9fc}
 </section>
 
 <footer class="footer">
+  <span style="font-size:11px;color:#64748d">Last updated: <time id="lastUpdated">Oct 4 2026</time></span> · 
   <strong>EV Tracker — Melbourne, VIC</strong> · Updated Oct 4 2026 · Source: manufacturer + aggregator + review sites + ATO · DB: 84 unique EVs · Auto-refresh: daily 07:00 · Agent daemon running continuously · Public site at <a href="https://steve-m365.github.io/ev-tracker-au/">GitHub Pages</a>
 </footer>
 </div>

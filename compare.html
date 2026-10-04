@@ -61,7 +61,7 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
 @media (max-width: 640px) {
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
-  input#navToggle:checked + label + div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
 }
 </style>
 
@@ -94,6 +94,7 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
 </div>
 
 <footer class="footer">
+  <span style="font-size:11px;color:#64748d">Last updated: <time id="lastUpdated">Oct 4 2026</time></span> · 
   <strong>EV Tracker — Melbourne, VIC</strong> · Modern Stripe-inspired design · Verified AU data · Auto-refresh daily 07:00 · DB: 83 unique vehicles · Source: manufacturer sites + aggregators/review sites + ATO.
 </footer>
 </div>

@@ -38,7 +38,7 @@ h1{font-size:42px;font-weight:600;letter-spacing:-1.6px;background:linear-gradie
 @media (max-width: 640px) {
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
-  input#navToggle:checked + label + div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
 }
 </style>
 

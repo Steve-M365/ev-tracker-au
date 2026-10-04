@@ -68,6 +68,17 @@ def build_html():
             f.write(al)
     with open(LOG, "a") as logf:
         logf.write(f"[{datetime.datetime.now()}] Rebuilt all_vehicles ({len(rows)}), compare ({len(vehicles)}), alerts ({len(alerts)})\n")
+    # Update index.html DB count snippet
+    try:
+        with open("/home/a-steve/workspace/index.html") as f:
+            idx = f.read()
+        idx = idx.replace("83 verified models", f"{len(rows)} verified models")
+        idx = idx.replace("5 price records", f"{c.execute('SELECT COUNT(*) FROM price_history').fetchone()[0]} price records")
+        with open("/home/a-steve/workspace/index.html", "w") as f:
+            f.write(idx)
+    except Exception:
+        pass
+
 
 if __name__ == "__main__":
     while True:

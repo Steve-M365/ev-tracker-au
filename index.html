@@ -60,7 +60,7 @@ tr:hover td{background:#f6f9fc}
 @media (max-width: 640px) {
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
-  input#navToggle:checked + label + div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
 }
 </style>
 
@@ -125,6 +125,7 @@ tr:hover td{background:#f6f9fc}
 </section>
 
 <footer class="footer">
+  <span style="font-size:11px;color:#64748d">Last updated: <time id="lastUpdated">Oct 4 2026</time></span> · 
   <strong>EV Tracker — Melbourne, VIC</strong> · Design: Stripe-inspired modern system (sohne-var weight 300, purple #533afd accent, deep navy #061b31, blue-tinted shadows, precise 4px-6px radius). Source: verified AU data. Auto-refresh: daily 07:00 (cron). Public site: <a href="https://steve-m365.github.io/ev-tracker-au/">GitHub Pages</a>.
 </footer>
 </div>
