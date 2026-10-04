@@ -70,8 +70,8 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
 <style>
 @media (max-width: 640px) {
   nav label[for="navToggle"] { display: block !important; }
-  nav div[style*="gap:16px"] { display: none; width: 100%; }
-  input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
+  nav > div { display: none; width: 100%; order: 3; }
+  input#navToggle:checked + label + nav > div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
 }
 
 @media (max-width: 640px) {
@@ -120,41 +120,34 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
 </div>
 
 <script>
-const data={
-"BYD Sealion 7 Premium":{"price":"~$62k–$64k VIC","range":"482 km / ~430 km real","dc":"150 kW / 10-80% ~32 min","warranty":"6yr/150k · 8yr/160k","tags":"🏆 Best Value · 🟣 Value SUV","pros":"Lowest entry price in mid-SUV; 82.56kWh Blade battery; rotating screen; V2L 6.6kW; 5-star ANCAP 2025; wireless CarPlay","cons":"Less efficient (~19kWh/100km); service network smaller than Kia/Tesla"},
-"BYD Sealion 7 Performance":{"price":"~$72k VIC","range":"456 km / ~400 km real","dc":"150 kW / 10-80% ~32 min","warranty":"6yr/150k · 8yr/160k","tags":"🏆 Fastest · 🏆 AWD Winner","pros":"390kW AWD; 4.5s 0-100; 690Nm; 20-inch wheels; heated rear seats; premium cabin","cons":"Higher price; shorter range; energy use ~21kWh/100km"},
-"Kia EV5 Air LR":{"price":"$59,990 DA (offer)","range":"555 km / ~520 km real","dc":"140 kW / 10-80% ~36 min","warranty":"7yr/unlimited · 8yr (est)","tags":"🏆 Range Winner · 🏆 Warranty","pros":"Longest WLTP range (555km); 88.1kWh BYD LFP; 7yr/unlimited warranty; V2L; integrated panoramic display; 5-star ANCAP","cons":"FWD only at deal price; slower 0-100 (8.9s); DC peak 140kW (not highest)"},
-"Kia EV5 Earth AWD":{"price":"$64,990 DA (offer)","range":"500 km / ~450 km real","dc":"140 kW / 10-80% ~38 min","warranty":"7yr/unlimited · 8yr (est)","tags":"🏆 AWD Family","pros":"AWD 230kW; premium seats; smart tailgate; 500km range; 5-star ANCAP","cons":"Over $65k without deal; efficiency lower (20.1kWh/100km); heavier (2198kg)"},
-"Tesla Model Y RWD":{"price":"$58,900+ ORC (est)","range":"466 km / ~420 km real","dc":"170 kW / ~15 min","warranty":"4yr/80k · 8yr/160k","tags":"🏆 Charging Winner · 🟣 Network","pros":"Supercharger network; fastest charging (250kW); OTA updates; best resale; 5-star ANCAP 2022","cons":"Higher on-road cost; service network limited (no fixed schedule); pricing volatile"},
-"BYD Atto 3":{"price":"~$43,600+ ORC","range":"420 km / ~390 km","dc":"80 kW / ~35 min","warranty":"6yr/150k · 8yr/160k","tags":"🟣 Budget SUV","pros":"Affordable entry; well-equipped; rotating screen available; 5-star ANCAP","cons":"Lower range; smaller battery; slower DC charging"},
-"Kia EV3":{"price":"$47,600+ ORC","range":"604 km / ~560 km","dc":"128 kW / ~30 min","warranty":"7yr/unlimited · 8yr (est)","tags":"🏆 Small SUV Range","pros":"New 81.4kWh; very long range for size; 7yr warranty; modern design","cons":"Newly launched; real-world efficiency unverified in AU conditions"},
-"MG4 Urban":{"price":"$31,990 DA","range":"316–405 km","dc":"117 kW / ~30 min","warranty":"7yr/unlimited (est)","tags":"🏆 Budget Winner","pros":"Lowest price EV in AU; 5-star ANCAP; practical hatch; low running costs","cons":"Shorter range; basic interior; slower charging vs premium rivals"},
-"Hyundai Ioniq 5":{"price":"~$72,000+ ORC","range":"507 km / ~460 km","dc":"233 kW / ~18 min","warranty":"5yr/unlimited · 8yr (est)","tags":"🏆 Fast Charging · 🟣 Design","pros":"800V architecture; 233kW DC; unique retro design; spacious cabin; V2L","cons":"Higher price; firm ride; service costs less predictable"},
-"BMW iX1":{"price":"$77,900+ ORC","range":"464 km / ~420 km","dc":"130 kW / ~30 min","warranty":"5yr/unlimited · 6yr/100k battery","tags":"🏆 Luxury Small SUV","pros":"Premium brand; refined ride; modern tech; BMW service network","cons":"Higher price; shorter battery warranty than Kia/BYD; smaller range"},
-"Subaru Solterra":{"price":"$71,900+ ORC","range":"466 km / ~420 km","dc":"150 kW / ~30 min","warranty":"5yr/unlimited · 8yr/160k","tags":"🏆 AWD Off-Road","pros":"True AWD; off-road capability; Subaru service network; high ground clearance","cons":"Higher price; less efficient; slower DC charging vs Tesla/Kia"},
-"Volvo EX30":{"price":"$49,990+ ORC","range":"480 km / ~440 km","dc":"153 kW / ~28 min","warranty":"5yr/unlimited · 8yr (est)","tags":"🏆 Small Luxury","pros":"Premium Swedish design; sustainable materials; strong safety; competitive price for luxury","cons":"New to AU; real-world range unverified; smaller boot"}
+const DB_DATA = {
+"BYD Sealion 7 Premium":{"price":"~$62k–$64k VIC","range":"482 km / ~430 km real","real_range":"~430 km","dc":"150 kW / 10-80% ~32 min","ac":"11 kW","battery":"82.56 kWh","warranty":"6yr/150k · 8yr/160k","tags":"🏆 Best Value · 🟣 Value SUV","body":"SUV","motor":"RWD","power":"150 kW","torque":"310 Nm","weight":"~1,880 kg","kwh100":"~19 kWh","seats":"5","boot":"~580 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"Lowest entry price in mid-SUV; 82.56kWh Blade battery; rotating screen; V2L 6.6kW; 5-star ANCAP 2025; wireless CarPlay","cons":"Less efficient (~19kWh/100km); service network smaller than Kia/Tesla"},
+"BYD Sealion 7 Performance":{"price":"~$72k VIC","range":"456 km / ~400 km real","real_range":"~400 km","dc":"150 kW / 10-80% ~32 min","ac":"11 kW","battery":"82.56 kWh","warranty":"6yr/150k · 8yr/160k","tags":"🏆 Fastest · 🏆 AWD Winner","body":"SUV","motor":"AWD","power":"390 kW","torque":"690 Nm","weight":"~2,050 kg","kwh100":"~21 kWh","seats":"5","boot":"~580 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"390kW AWD; 4.5s 0-100; 690Nm; 20-inch wheels; heated rear seats; premium cabin","cons":"Higher price; shorter range; energy use ~21kWh/100km"},
+"Kia EV5 Air LR":{"price":"$59,990 DA (offer)","range":"555 km / ~520 km real","real_range":"~520 km","dc":"140 kW / 10-80% ~36 min","ac":"11 kW","battery":"88.1 kWh","warranty":"7yr/unlimited · 8yr (est)","tags":"🏆 Range Winner · 🏆 Warranty","body":"SUV","motor":"FWD","power":"160 kW","torque":"310 Nm","weight":"~2,198 kg","kwh100":"~16.5 kWh","seats":"5","boot":"~665 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"Longest WLTP range (555km); 88.1kWh LFP; 7yr/unlimited warranty; V2L; integrated panoramic display; 5-star ANCAP","cons":"FWD only at deal price; slower 0-100 (8.9s); DC peak 140kW (not highest)"},
+"Kia EV5 Earth AWD":{"price":"$64,990 DA (offer)","range":"500 km / ~450 km real","real_range":"~450 km","dc":"140 kW / 10-80% ~38 min","ac":"11 kW","battery":"88.1 kWh","warranty":"7yr/unlimited · 8yr (est)","tags":"🏆 AWD Family","body":"SUV","motor":"AWD","power":"230 kW","torque":"480 Nm","weight":"~2,198 kg","kwh100":"~20.1 kWh","seats":"5","boot":"~665 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"AWD 230kW; premium seats; smart tailgate; 500km range; 5-star ANCAP","cons":"Over $65k without deal; efficiency lower (20.1kWh/100km); heavier (2198kg)"},
+"Tesla Model Y RWD":{"price":"~$66,000+ DA (verify)","range":"466 km / ~420 km real","real_range":"~420 km","dc":"250 kW / 10-80% ~15 min","ac":"11 kW","battery":"62.5 kWh (est)","warranty":"4yr/80k · 8yr/160k","tags":"🏆 Charging Winner · 🟣 Network","body":"SUV","motor":"RWD","power":"299 kW","torque":"440 Nm","weight":"~1,833 kg","kwh100":"~16.1 kWh","seats":"5","boot":"~854 L","towing":"1,600 kg","fbt":"Check LCT ($89,332 cap)","pros":"Supercharger network; fastest charging (250kW); OTA updates; best resale; 5-star ANCAP 2022","cons":"Higher on-road cost; service network limited (no fixed schedule); pricing volatile"}
 };
 function render(){
   const selections = [document.getElementById('v1').value, document.getElementById('v2').value, document.getElementById('v3').value];
   const html = selections.map((k,index) => {
-    const d = data[k];
+    const d = DB_DATA[k];
     if(!d) return `<div class="card"><h3>Not selected</h3><p>Select a vehicle above.</p></div>`;
-    // Determine winner badges
-    const badges = [];
-    if(d.tags && d.tags.includes('🏆')) badges.push('<span class="tag winner">🏆 Winner</span>');
-    else badges.push('');
     return `<div class="card">
       <h3>${k}</h3>
-      <p class="variant">Variant / Body · Drive-away (approx)</p>
+      <p class="variant">${d.body} · ${d.motor} · ${d.power}</p>
       <div style="font-size:28px;font-weight:300;color:#061b31;margin:4px 0 12px">${d.price}</div>
       <div class="stat-row"><span>WLTP / Real range</span><span>${d.range}</span></div>
-      <div class="stat-row"><span>DC charging / 10-80%</span><span>${d.dc}</span></div>
-      <div class="stat-row"><span>Battery / AC</span><span>${d.tags ? d.tags.replace('🏆 ','').replace('🟣 ','') : 'See specs'}</span></div>
-      <div class="stat-row"><span>Warranty</span><span>${d.warranty}</span></div>
-      <div class="tag-row">${badges.join(' ')} <span class="tag">${d.tags ? d.tags.replace(/🏆 |🟣 /g,'') : 'EV'}</span></div>
+      <div class="stat-row"><span>DC / AC charging</span><span>${d.dc} / ${d.ac}</span></div>
+      <div class="stat-row"><span>Battery</span><span>${d.battery}</span></div>
+      <div class="stat-row"><span>Energy use</span><span>${d.kwh100} kWh/100km</span></div>
+      <div class="stat-row"><span>Weight</span><span>${d.weight}</span></div>
+      <div class="stat-row"><span>Towing</span><span>${d.towing}</span></div>
+      <div class="stat-row"><span>Seats / Boot</span><span>${d.seats} seats · ${d.boot}</span></div>
+      <div class="stat-row"><span>Warranty (veh / batt)</span><span>${d.warranty}</span></div>
+      <div class="stat-row"><span>FBT / LCT</span><span>${d.fbt}</span></div>
+      <div class="tag-row">${d.tags}</div>
       <div style="margin-top:16px;padding-top:14px;border-top:1px solid #f6f9fc;font-size:14px;color:#061b31;line-height:1.45"><strong>Pros:</strong> ${d.pros}</div>
       <div style="margin-top:8px;font-size:14px;color:#64748d;line-height:1.45"><strong>Cons:</strong> ${d.cons}</div>
-      <div class="tag-row" style="margin-top:12px;justify-content:flex-end"><a href="all_vehicles.html" style="font-size:12px;color:#533afd;text-decoration:none;font-weight:500">Full specs →</a></div>
     </div>`;
   }).join('');
   document.getElementById('compareGrid').innerHTML = html;
