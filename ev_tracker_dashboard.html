@@ -43,6 +43,16 @@ tr:hover td{background:#f6f9fc}
 .nav a{color:#533afd;text-decoration:none;font-weight:500;font-size:13px}
 .footer{margin-top:56px;padding-top:24px;border-top:1px solid #e5edf5;font-size:12px;color:#64748d}
 @media(max-width:768px){.summary-grid{grid-template-columns:1fr 1fr}h1{font-size:36px}.subtitle{font-size:16px}.table-wrap{overflow-x:auto}}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
+}
 </style>
 </head>
 <body>
@@ -62,6 +72,16 @@ tr:hover td{background:#f6f9fc}
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
   input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
+}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
 }
 </style>
 
@@ -83,13 +103,13 @@ tr:hover td{background:#f6f9fc}
   <h2>Quick Shortlist</h2>
   <div class="table-wrap">
   <table>
-  <thead><tr><th>Model / Variant</th><th>Drive-away (VIC est)</th><th>WLTP Range</th><th>Real Range (est)</th><th>DC Charge / AC</th><th>Warranty (veh / batt)</th><th>Best For</th></tr></thead>
+  <thead><tr><th>Model / Variant</th><th>Drive-away (VIC est)</th><th>WLTP Range</th><th>Real Range (est)</th><th>DC Charge / AC</th><th>Warranty (veh / batt)</th><th>Winner</th></tr></thead>
   <tbody>
-  <tr><td><span class="model">BYD Sealion 7 Premium</span> <span class="tag best">Best Value</span> <span class="tag">SUV</span> <span class="tag">RWD</span></td><td>~$62k–$64k</td><td>482 km</td><td>~430 km</td><td>~150 kW / 11 kW</td><td>6yr / 8yr</td><td>Best value mid-SUV; rotating screen; V2L</td></tr>
-  <tr><td><span class="model">BYD Sealion 7 Performance</span> <span class="tag">SUV</span> <span class="tag">AWD</span></td><td>~$72k</td><td>456 km</td><td>~400 km</td><td>~150 kW / 11 kW</td><td>6yr / 8yr</td><td>AWD 390kW; 4.5s; premium cabin</td></tr>
-  <tr><td><span class="model">Kia EV5 Air LR</span> <span class="tag best">Best Range</span> <span class="tag deal">Offer</span> <span class="tag">SUV</span></td><td>$59,990 DA</td><td>555 km</td><td>~520 km</td><td>140 kW / 11 kW</td><td>7yr / 8yr (est)</td><td>Offer to 31 Aug 2026; longest range; 7yr warranty</td></tr>
-  <tr><td><span class="model">Kia EV5 Earth AWD</span> <span class="tag">SUV</span> <span class="tag">AWD</span></td><td>$64,990 DA</td><td>500 km</td><td>~450 km</td><td>140 kW / 11 kW</td><td>7yr / 8yr (est)</td><td>AWD 230kW; premium seats; smart tailgate</td></tr>
-  <tr><td><span class="model">Tesla Model Y / 3</span> <span class="tag">Watch</span></td><td>Unverified — check tesla.com/au</td><td>466–533 km (est)</td><td>~420–480 km</td><td>250 kW / 11 kW</td><td>4yr / 8yr (est)</td><td>Verify current drive-away before comparing</td></tr>
+  <tr><td><span class="model">BYD Sealion 7 Premium</span> <span class="tag best">Best Value</span> <span class="tag">SUV</span> <span class="tag">RWD</span></td><td>~$62k–$64k</td><td>482 km</td><td>~430 km</td><td>~150 kW / 11 kW</td><td>6yr / 8yr</td><td><span class="badge" style="background:rgba(21,190,83,0.12);color:#0d8a3f;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:600">🏆 Best Value</span></td><td>Best value mid-SUV; rotating screen; V2L</td></tr>
+  <tr><td><span class="model">BYD Sealion 7 Performance</span> <span class="tag">SUV</span> <span class="tag">AWD</span></td><td>~$72k</td><td>456 km</td><td>~400 km</td><td>~150 kW / 11 kW</td><td>6yr / 8yr</td><td><span class="badge" style="background:rgba(21,190,83,0.12);color:#0d8a3f;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:600">🏆 AWD Power</span></td><td>AWD 390kW; 4.5s; premium cabin</td></tr>
+  <tr><td><span class="model">Kia EV5 Air LR</span> <span class="tag best">Best Range</span> <span class="tag deal">Offer</span> <span class="tag">SUV</span></td><td>$59,990 DA</td><td>555 km</td><td>~520 km</td><td>140 kW / 11 kW</td><td>7yr / 8yr (est)</td><td><span class="badge" style="background:rgba(21,190,83,0.12);color:#0d8a3f;padding:4px 8px;border-radius:6px;font-size:11px;font-weight:600">🏆 Longest Range</span></td><td>Offer to 31 Aug 2026; longest range; 7yr warranty</td></tr>
+  <tr><td><span class="model">Kia EV5 Earth AWD</span> <span class="tag">SUV</span> <span class="tag">AWD</span></td><td>$64,990 DA</td><td>500 km</td><td>~450 km</td><td>140 kW / 11 kW</td><td>7yr / 8yr (est)</td><td>—</td><td>AWD 230kW; premium seats; smart tailgate</td></tr>
+  <tr><td><span class="model">Tesla Model Y / 3</span> <span class="tag">Watch</span></td><td>Unverified — check tesla.com/au</td><td>466–533 km (est)</td><td>~420–480 km</td><td>250 kW / 11 kW</td><td>4yr / 8yr (est)</td><td>—</td><td>Verify current drive-away before comparing</td></tr>
   </tbody>
   </table>
   </div>
@@ -134,5 +154,49 @@ tr:hover td{background:#f6f9fc}
   <strong>EV Tracker — Melbourne, VIC</strong> · Updated Oct 4 2026 · Source: manufacturer + aggregator + review sites + ATO · DB: 84 unique EVs · Auto-refresh: daily 07:00 · Agent daemon running continuously · Public site at <a href="https://steve-m365.github.io/ev-tracker-au/">GitHub Pages</a>
 </footer>
 </div>
+
+<section class="section">
+  <h2>Range vs Price</h2>
+  <div style="background:#fff;border:1px solid #e5edf5;border-radius:6px;padding:20px;box-shadow:0 15px 35px rgba(23,23,23,0.06);max-width:800px">
+    <canvas id="rangePriceChart" aria-label="Range versus price scatter chart" role="img"></canvas>
+    <p style="font-size:12px;color:#64748d;margin-top:8px">Each point is a model. Larger bubble = bigger battery. Helps identify value (high range, low price).</p>
+  </div>
+</section>
+
+<script>
+const rpData = [
+  {model:"BYD Sealion 7 Premium", range:482, price:54990, battery:82.56},
+  {model:"Kia EV5 Air LR", range:555, price:59990, battery:88.1},
+  {model:"BYD Sealion 7 Performance", range:456, price:63990, battery:82.56},
+  {model:"Kia EV5 Earth AWD", range:500, price:64990, battery:88.1},
+  {model:"Tesla Model Y RWD", range:466, price:71990, battery:62.5}
+];
+const ctx2 = document.getElementById('rangePriceChart');
+if (ctx2) {
+  new Chart(ctx2, {
+    type: 'bubble',
+    data: {
+      datasets: [{
+        label: 'EVs',
+        data: rpData.map(d => ({x: d.price, y: d.range, r: Math.sqrt(d.battery)*1.8, model: d.model})),
+        backgroundColor: 'rgba(83,58,253,0.25)',
+        borderColor: '#533afd',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {display: false},
+        tooltip: {callbacks: {label: (c) => c.raw.model + ': $' + c.raw.x.toLocaleString() + ', ' + c.raw.y + ' km'}}
+      },
+      scales: {
+        x: {title: {display: true, text: 'Price (AUD)'}, ticks: {callback: (v) => '$' + v.toLocaleString()}},
+        y: {title: {display: true, text: 'Range (km)'}}
+      }
+    }
+  });
+}
+</script>
 </body>
 </html>

@@ -20,6 +20,16 @@ h1{font-size:42px;font-weight:600;letter-spacing:-1.6px;background:linear-gradie
 .alert-card p{font-size:14px;color:var(--muted)}
 .nav{margin-top:24px;font-size:13px}
 .nav a{color:#7170ff;text-decoration:none;margin-right:16px}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
+}
 </style>
 </head>
 <body>
@@ -39,6 +49,16 @@ h1{font-size:42px;font-weight:600;letter-spacing:-1.6px;background:linear-gradie
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
   input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
+}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
 }
 </style>
 

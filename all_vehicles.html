@@ -30,14 +30,23 @@ tr:hover td{background:#f6f9fc}
 .nav a{color:#533afd;text-decoration:none;font-weight:500;font-size:13px}
 .footer{margin-top:40px;padding-top:24px;border-top:1px solid #e5edf5;font-size:12px;color:#64748d}
 @media(max-width:768px){th,td{padding:10px 8px;font-size:12px}h1{font-size:32px}}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
+}
 </style>
 </head>
 <body>
 <a href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">Skip to content</a>
 <nav aria-label="Main" style="display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid #e5edf5;margin-bottom:24px;flex-wrap:wrap;gap:12px">
   <div style="font-size:13px;font-weight:600;color:#533afd;letter-spacing:0.08em;text-transform:uppercase">EV Tracker</div>
-  <input type="checkbox" id="navToggle" style="display:none">
-  <label for="navToggle" style="display:none;cursor:pointer;padding:8px 12px;border:1px solid #e5edf5;border-radius:6px;font-size:18px;color:#061b31;background:#fff">☰</label>
+    <label for="navToggle" style="display:none;cursor:pointer;padding:8px 12px;border:1px solid #e5edf5;border-radius:6px;font-size:18px;color:#061b31;background:#fff">☰</label>
   <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
     <a href="index.html" style="font-size:13px;color:#061b31;text-decoration:none;font-weight:500">Dashboard</a>
     <a href="all_vehicles.html" style="font-size:13px;color:#061b31;text-decoration:none;font-weight:500">All Vehicles</a>
@@ -51,6 +60,16 @@ tr:hover td{background:#f6f9fc}
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
   input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
+}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
 }
 </style>
 

@@ -43,6 +43,16 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
 .nav a{color:#533afd;text-decoration:none;font-weight:500}
 .footer{margin-top:56px;padding-top:24px;border-top:1px solid #e5edf5;font-size:12px;color:#64748d}
 @media(max-width:768px){.grid{grid-template-columns:1fr}h1{font-size:36px}.subtitle{font-size:16px}}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
+}
 </style>
 </head>
 <body>
@@ -62,6 +72,16 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
   nav label[for="navToggle"] { display: block !important; }
   nav div[style*="gap:16px"] { display: none; width: 100%; }
   input#navToggle:checked ~ div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; width: 100%; }
+}
+
+@media (max-width: 640px) {
+  nav { flex-wrap: wrap; gap: 8px; }
+  nav > div:last-of-type { display: none; width: 100%; order: 3; }
+  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
+  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
+  @media (hover: hover) {
+    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
+  }
 }
 </style>
 
@@ -141,5 +161,21 @@ function render(){
 }
 render();
 </script>
-</body>
+<script>
+function exportCompareCSV() {
+  const rows = document.querySelectorAll('.compare-row');
+  if (!rows.length) return;
+  let csv = 'Specification,' + Array.from(document.querySelectorAll('.compare-select')).map(s => s.options[s.selectedIndex]?.text || '').join(',') + '\n';
+  rows.forEach(r => {
+    const label = r.querySelector('.spec-label')?.textContent?.trim() || '';
+    const values = Array.from(r.querySelectorAll('.spec-value')).map(v => '"' + v.textContent.trim().replace(/"/g, '""') + '"');
+    csv += label + ',' + values.join(',') + '\n';
+  });
+  const blob = new Blob([csv], {type: 'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'compare.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+</script></body>
 </html>
