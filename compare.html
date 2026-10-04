@@ -44,15 +44,7 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
 .footer{margin-top:56px;padding-top:24px;border-top:1px solid #e5edf5;font-size:12px;color:#64748d}
 @media(max-width:768px){.grid{grid-template-columns:1fr}h1{font-size:36px}.subtitle{font-size:16px}}
 
-@media (max-width: 640px) {
-  nav { flex-wrap: wrap; gap: 8px; }
-  nav > div:last-of-type { display: none; width: 100%; order: 3; }
-  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
-  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
-  @media (hover: hover) {
-    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
-  }
-}
+
 </style>
 </head>
 <body>
@@ -68,21 +60,9 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
   </div>
 </nav>
 <style>
-@media (max-width: 640px) {
-  nav label[for="navToggle"] { display: block !important; }
-  nav > div { display: none; width: 100%; order: 3; }
-  input#navToggle:checked + label + nav > div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
-}
 
-@media (max-width: 640px) {
-  nav { flex-wrap: wrap; gap: 8px; }
-  nav > div:last-of-type { display: none; width: 100%; order: 3; }
-  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
-  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
-  @media (hover: hover) {
-    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
-  }
-}
+
+
 </style>
 
 <div id="main" class="container" role="main">
@@ -120,13 +100,8 @@ select:focus{outline:2px solid #533afd;outline-offset:2px;box-shadow:0 30px 45px
 </div>
 
 <script>
-const DB_DATA = {
-"BYD Sealion 7 Premium":{"price":"~$62k–$64k VIC","range":"482 km / ~430 km real","real_range":"~430 km","dc":"150 kW / 10-80% ~32 min","ac":"11 kW","battery":"82.56 kWh","warranty":"6yr/150k · 8yr/160k","tags":"🏆 Best Value · 🟣 Value SUV","body":"SUV","motor":"RWD","power":"150 kW","torque":"310 Nm","weight":"~1,880 kg","kwh100":"~19 kWh","seats":"5","boot":"~580 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"Lowest entry price in mid-SUV; 82.56kWh Blade battery; rotating screen; V2L 6.6kW; 5-star ANCAP 2025; wireless CarPlay","cons":"Less efficient (~19kWh/100km); service network smaller than Kia/Tesla"},
-"BYD Sealion 7 Performance":{"price":"~$72k VIC","range":"456 km / ~400 km real","real_range":"~400 km","dc":"150 kW / 10-80% ~32 min","ac":"11 kW","battery":"82.56 kWh","warranty":"6yr/150k · 8yr/160k","tags":"🏆 Fastest · 🏆 AWD Winner","body":"SUV","motor":"AWD","power":"390 kW","torque":"690 Nm","weight":"~2,050 kg","kwh100":"~21 kWh","seats":"5","boot":"~580 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"390kW AWD; 4.5s 0-100; 690Nm; 20-inch wheels; heated rear seats; premium cabin","cons":"Higher price; shorter range; energy use ~21kWh/100km"},
-"Kia EV5 Air LR":{"price":"$59,990 DA (offer)","range":"555 km / ~520 km real","real_range":"~520 km","dc":"140 kW / 10-80% ~36 min","ac":"11 kW","battery":"88.1 kWh","warranty":"7yr/unlimited · 8yr (est)","tags":"🏆 Range Winner · 🏆 Warranty","body":"SUV","motor":"FWD","power":"160 kW","torque":"310 Nm","weight":"~2,198 kg","kwh100":"~16.5 kWh","seats":"5","boot":"~665 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"Longest WLTP range (555km); 88.1kWh LFP; 7yr/unlimited warranty; V2L; integrated panoramic display; 5-star ANCAP","cons":"FWD only at deal price; slower 0-100 (8.9s); DC peak 140kW (not highest)"},
-"Kia EV5 Earth AWD":{"price":"$64,990 DA (offer)","range":"500 km / ~450 km real","real_range":"~450 km","dc":"140 kW / 10-80% ~38 min","ac":"11 kW","battery":"88.1 kWh","warranty":"7yr/unlimited · 8yr (est)","tags":"🏆 AWD Family","body":"SUV","motor":"AWD","power":"230 kW","torque":"480 Nm","weight":"~2,198 kg","kwh100":"~20.1 kWh","seats":"5","boot":"~665 L","towing":"1,500 kg","fbt":"Eligible (under LCT)","pros":"AWD 230kW; premium seats; smart tailgate; 500km range; 5-star ANCAP","cons":"Over $65k without deal; efficiency lower (20.1kWh/100km); heavier (2198kg)"},
-"Tesla Model Y RWD":{"price":"~$66,000+ DA (verify)","range":"466 km / ~420 km real","real_range":"~420 km","dc":"250 kW / 10-80% ~15 min","ac":"11 kW","battery":"62.5 kWh (est)","warranty":"4yr/80k · 8yr/160k","tags":"🏆 Charging Winner · 🟣 Network","body":"SUV","motor":"RWD","power":"299 kW","torque":"440 Nm","weight":"~1,833 kg","kwh100":"~16.1 kWh","seats":"5","boot":"~854 L","towing":"1,600 kg","fbt":"Check LCT ($89,332 cap)","pros":"Supercharger network; fastest charging (250kW); OTA updates; best resale; 5-star ANCAP 2022","cons":"Higher on-road cost; service network limited (no fixed schedule); pricing volatile"}
-};
+let DB_DATA = {};
+fetch('compare_data.json').then(r => r.json()).then(d => { DB_DATA = d; render(); }).catch(() => { document.getElementById('compareGrid').innerHTML = '<div class="card"><h3>Data unavailable</h3><p>compare_data.json not found. Run agent_daemon.py to generate it.</p></div>'; });
 function render(){
   const selections = [document.getElementById('v1').value, document.getElementById('v2').value, document.getElementById('v3').value];
   const html = selections.map((k,index) => {
@@ -134,25 +109,24 @@ function render(){
     if(!d) return `<div class="card"><h3>Not selected</h3><p>Select a vehicle above.</p></div>`;
     return `<div class="card">
       <h3>${k}</h3>
-      <p class="variant">${d.body} · ${d.motor} · ${d.power}</p>
-      <div style="font-size:28px;font-weight:300;color:#061b31;margin:4px 0 12px">${d.price}</div>
-      <div class="stat-row"><span>WLTP / Real range</span><span>${d.range}</span></div>
-      <div class="stat-row"><span>DC / AC charging</span><span>${d.dc} / ${d.ac}</span></div>
-      <div class="stat-row"><span>Battery</span><span>${d.battery}</span></div>
-      <div class="stat-row"><span>Energy use</span><span>${d.kwh100} kWh/100km</span></div>
-      <div class="stat-row"><span>Weight</span><span>${d.weight}</span></div>
-      <div class="stat-row"><span>Towing</span><span>${d.towing}</span></div>
-      <div class="stat-row"><span>Seats / Boot</span><span>${d.seats} seats · ${d.boot}</span></div>
-      <div class="stat-row"><span>Warranty (veh / batt)</span><span>${d.warranty}</span></div>
-      <div class="stat-row"><span>FBT / LCT</span><span>${d.fbt}</span></div>
-      <div class="tag-row">${d.tags}</div>
-      <div style="margin-top:16px;padding-top:14px;border-top:1px solid #f6f9fc;font-size:14px;color:#061b31;line-height:1.45"><strong>Pros:</strong> ${d.pros}</div>
-      <div style="margin-top:8px;font-size:14px;color:#64748d;line-height:1.45"><strong>Cons:</strong> ${d.cons}</div>
+      <p class="variant">${d.body || 'EV'} · ${d.motor || '—'} · ${d.power || '—'}</p>
+      <div style="font-size:28px;font-weight:300;color:#061b31;margin:4px 0 12px">${d.price || 'TBA'}</div>
+      <div class="stat-row"><span>WLTP / Real range</span><span>${d.range || 'TBA'}</span></div>
+      <div class="stat-row"><span>DC / AC charging</span><span>${d.dc || '?'} / ${d.ac || '?'}</span></div>
+      <div class="stat-row"><span>Battery</span><span>${d.battery || '?'}</span></div>
+      <div class="stat-row"><span>Energy use</span><span>${d.kwh100 || '?'} kWh/100km</span></div>
+      <div class="stat-row"><span>Weight</span><span>${d.weight || '?'}</span></div>
+      <div class="stat-row"><span>Towing</span><span>${d.towing || '?'}</span></div>
+      <div class="stat-row"><span>Seats / Boot</span><span>${d.seats || '?'} seats · ${d.boot || '?'}</span></div>
+      <div class="stat-row"><span>Warranty (veh / batt)</span><span>${d.warranty || '?'}</span></div>
+      <div class="stat-row"><span>FBT / LCT</span><span>${d.fbt || '?'}</span></div>
+      <div class="tag-row">${d.tags || ''}</div>
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid #f6f9fc;font-size:14px;color:#061b31;line-height:1.45"><strong>Pros:</strong> ${d.pros || 'See full specs'}</div>
+      <div style="margin-top:8px;font-size:14px;color:#64748d;line-height:1.45"><strong>Cons:</strong> ${d.cons || 'Verify at manufacturer site'}</div>
     </div>`;
   }).join('');
   document.getElementById('compareGrid').innerHTML = html;
 }
-render();
 </script>
 <script>
 function exportCompareCSV() {
@@ -170,5 +144,34 @@ function exportCompareCSV() {
   a.href = url; a.download = 'compare.csv'; a.click();
   URL.revokeObjectURL(url);
 }
+</script><script>
+// Mobile nav toggle
+(function(){
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  const toggle = document.createElement('button');
+  toggle.textContent = '☰';
+  toggle.setAttribute('aria-label', 'Toggle navigation menu');
+  toggle.style.cssText = 'display:none;cursor:pointer;padding:8px 12px;border:1px solid #e5edf5;border-radius:6px;font-size:18px;color:#061b31;background:#fff;font-family:inherit';
+  const links = nav.querySelector('div');
+  if (links) {
+    nav.insertBefore(toggle, links);
+    const mq = window.matchMedia('(max-width: 640px)');
+    function apply(e) {
+      toggle.style.display = e.matches ? 'block' : 'none';
+      links.style.display = e.matches ? 'none' : 'flex';
+    }
+    mq.addEventListener('change', apply);
+    apply(mq);
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.gap = '8px';
+      links.style.paddingTop = '12px';
+      links.style.width = '100%';
+    });
+  }
+})();
 </script></body>
 </html>

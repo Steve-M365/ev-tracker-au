@@ -44,15 +44,7 @@ tr:hover td{background:#f6f9fc}
 .footer{margin-top:56px;padding-top:24px;border-top:1px solid #e5edf5;font-size:12px;color:#64748d}
 @media(max-width:768px){.summary-grid{grid-template-columns:1fr 1fr}h1{font-size:36px}.subtitle{font-size:16px}.table-wrap{overflow-x:auto}}
 
-@media (max-width: 640px) {
-  nav { flex-wrap: wrap; gap: 8px; }
-  nav > div:last-of-type { display: none; width: 100%; order: 3; }
-  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
-  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
-  @media (hover: hover) {
-    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
-  }
-}
+
 </style>
 </head>
 <body>
@@ -68,21 +60,9 @@ tr:hover td{background:#f6f9fc}
   </div>
 </nav>
 <style>
-@media (max-width: 640px) {
-  nav label[for="navToggle"] { display: block !important; }
-  nav > div { display: none; width: 100%; order: 3; }
-  input#navToggle:checked + label + nav > div { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
-}
 
-@media (max-width: 640px) {
-  nav { flex-wrap: wrap; gap: 8px; }
-  nav > div:last-of-type { display: none; width: 100%; order: 3; }
-  nav:hover > div:last-of-type, nav:focus-within > div:last-of-type { display: flex !important; flex-direction: column; gap: 8px; padding-top: 12px; }
-  nav::after { content: "☰"; display: none; font-size: 20px; cursor: pointer; padding: 4px 8px; }
-  @media (hover: hover) {
-    nav:hover::after { display: block; position: absolute; right: 16px; top: 16px; }
-  }
-}
+
+
 </style>
 
 <div id="main" class="container" role="main">
@@ -198,5 +178,34 @@ if (ctx2) {
   });
 }
 </script>
-</body>
+<script>
+// Mobile nav toggle
+(function(){
+  const nav = document.querySelector('nav');
+  if (!nav) return;
+  const toggle = document.createElement('button');
+  toggle.textContent = '☰';
+  toggle.setAttribute('aria-label', 'Toggle navigation menu');
+  toggle.style.cssText = 'display:none;cursor:pointer;padding:8px 12px;border:1px solid #e5edf5;border-radius:6px;font-size:18px;color:#061b31;background:#fff;font-family:inherit';
+  const links = nav.querySelector('div');
+  if (links) {
+    nav.insertBefore(toggle, links);
+    const mq = window.matchMedia('(max-width: 640px)');
+    function apply(e) {
+      toggle.style.display = e.matches ? 'block' : 'none';
+      links.style.display = e.matches ? 'none' : 'flex';
+    }
+    mq.addEventListener('change', apply);
+    apply(mq);
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.gap = '8px';
+      links.style.paddingTop = '12px';
+      links.style.width = '100%';
+    });
+  }
+})();
+</script></body>
 </html>

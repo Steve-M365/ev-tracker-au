@@ -78,6 +78,43 @@ def build_html():
             f.write(idx)
     except Exception:
         pass
+    # Generate compare data from DB
+    try:
+        c.execute("SELECT brand, model, body, price_from, range_km, real_range_est, battery_kwh, dc_peak, ac_peak, warranty_years, warranty_km, notes FROM full_market")
+        comp_rows = c.fetchall()
+        comp_json = {}
+        for r in comp_rows:
+            brand, model, body, price_from, range_km, real_range, battery, dc, ac, warr_y, warr_km, notes = r
+            key = f"{brand} {model}"
+            comp_json[key] = {
+                "price": f"~${price_from:,} DA" if price_from else "TBA",
+                "range": f"{range_km} km / ~{real_range or range_km} km real",
+                "dc": f"{dc or '?'} kW",
+                "ac": f"{ac or '?'} kW",
+                "battery": f"{battery} kWh" if battery else "? kWh",
+                "warranty": f"{warr_y}yr/{warr_km or '?'}k",
+                "body": body or "?",
+                "motor": "TBD",
+                "tags": "",
+                "fbt": "Check LCT ($89,332 cap)",
+                "pros": notes or "See full specs",
+                "cons": "Limited data; verify at manufacturer site"
+            }
+        import json
+        with open("/home/a-steve/workspace/compare_data.json", "w") as f:
+            json.dump(comp_json, f, indent=2)
+    except Exception as e:
+        with open(LOG, "a") as logf:
+            logf.write(f"[{datetime.datetime.now()}] compare_data error: {e}\n")
+    # Generate chart data from price_history
+    try:
+        price_rows = c.execute("SELECT model, variant, price_aud, recorded_date FROM price_history WHERE price_aud != '' ORDER BY recorded_at").fetchall()
+        chart_json = [{"date": r[2], "model": f"{r[0]} {r[1]}", "price": int(r[1]) if str(r[1]).isdigit() else 0} for r in price_rows]
+        with open("/home/a-steve/workspace/price_chart_data.json", "w") as f:
+            json.dump(chart_json, f, indent=2)
+    except Exception as e:
+        with open(LOG, "a") as logf:
+            logf.write(f"[{datetime.datetime.now()}] chart_data error: {e}\n")
 
 
 if __name__ == "__main__":
