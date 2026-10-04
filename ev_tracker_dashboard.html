@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EV Tracker — Melbourne, VIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090a;--surface:#111113;--surface2:#16161a;--border:rgba(255,255,255,0.07);
+  --text:#f4f5f7;--muted:#a0a3ad;--accent:#7170ff;--accent2:#5e6ad2;
+  --radius:12px;--shadow:rgba(0,0,0,0.35) 0 16px 40px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;min-height:100vh}
+.container{max-width:1200px;margin:0 auto;padding:48px 24px}
+header{margin-bottom:40px}
+h1{font-size:52px;font-weight:600;letter-spacing:-1.8px;line-height:1.05;background:linear-gradient(135deg,#fff 40%,#828fff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{color:var(--muted);font-size:17px;margin-top:8px;max-width:640px}
+.section{margin-bottom:52px}
+.section h2{font-size:13px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:18px;font-weight:500}
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:rgba(255,255,255,0.03);font-weight:600;color:#c5c7cf;font-size:11px;text-transform:uppercase;letter-spacing:0.06em}
+tr:hover td{background:rgba(255,255,255,0.02)}
+.model-name{font-weight:600;color:#fff;font-family:'JetBrains Mono',monospace;font-size:13px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:500;border:1px solid rgba(255,255,255,0.08);color:#c5c7cf;background:rgba(255,255,255,0.03);margin-right:4px;margin-top:4px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:transform .15s ease, border-color .2s ease}
+.card:hover{border-color:rgba(255,255,255,0.12);transform:translateY(-2px)}
+.card h3{font-size:16px;font-weight:600;margin-bottom:6px}
+.card .meta{color:var(--muted);font-size:13px;margin-bottom:14px}
+.card .pros{color:#a6e8b8;font-size:13px;margin-bottom:8px}
+.card .cons{color:#f0a0a0;font-size:13px}
+.footer{margin-top:40px;color:#62666d;font-size:12px;padding-top:24px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>EV Tracker — Melbourne, VIC</h1>
+  <p style="margin-top:10px"><a style="color:#7170ff;text-decoration:none;font-weight:500" href="all_vehicles.html">All vehicles →</a> &nbsp;|&nbsp; <a style="color:#7170ff;text-decoration:none;font-weight:500" href="compare.html">Compare 3 →</a></p>
+  <p class="subtitle"><br><a href="upcoming_models.md">Upcoming</a><br><a href="alerts.html">Alerts</a>Shortlist and financing comparison for a Melbourne-based PAYG buyer. Last updated 2026-10-04. Design: Linear dark (dark-mode native, Inter 510 weight, indigo-violet accent).</p>
+</header>
+
+<section class="section">
+  <h2>Market Shortlist — Oct 4 2026</h2>
+  <div class="table-wrap">
+  <table>
+  <thead>
+  <tr><th>Model / Variant</th><th>Drive-away (VIC est.)</th><th>WLTP / Real range</th><th>DC / AC</th><th>Warranty</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+  <tr><td><span class="model-name">BYD Sealion 7 Premium</span> <br><span class="tag">RWD</span><span class="tag">SUV</span></td><td>~$62k–$64k</td><td>482 km / ~430 km</td><td>~150 kW / 7–11 kW</td><td>6yr/150k · 8yr/160k</td><td>Best value long-range SUV; AWD Performance at ~$72k</td></tr>
+  <tr><td><span class="model-name">BYD Sealion 7 Performance</span> <br><span class="tag">AWD</span></td><td>~$69k–$72k</td><td>456 km / ~400 km</td><td>~150 kW / 11 kW</td><td>6yr/150k · 8yr/160k</td><td>390 kW AWD; near budget cap</td></tr>
+  <tr><td><span class="model-name">Kia EV5 Air LR</span> <br><span class="tag">FWD</span><span class="tag">Deal</span></td><td>$59,990 DA</td><td>555 km / ~520 km</td><td>140 kW / 11 kW</td><td>7yr / 8yr (est.)</td><td>Offer to 31 Aug 2026; best range/value</td></tr>
+  <tr><td><span class="model-name">Kia EV5 Earth AWD</span> <br><span class="tag">AWD</span></td><td>$64,990 DA</td><td>500 km / ~450 km</td><td>140 kW / 11 kW</td><td>7yr / 8yr (est.)</td><td>Over $65k outside deal; best AWD family pick</td></tr>
+  <tr><td><span class="model-name">Tesla Model Y / 3</span> <br><span class="tag">Watch</span></td><td>Unverified — check tesla.com/au</td><td>455–533 km (est.)</td><td>250 kW / 11 kW</td><td>4yr/80k · 8yr/160k (est.)</td><td>Verify current drive-away before comparing</td></tr>
+  </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Financing — 5-Year Cost (approx)</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Car Loan (secured)</h3><p class="meta">~$1,302/mo after-tax @ 7.5% p.a.</p><p class="pros">Simple; predictable; full ownership</p><p class="cons">No tax benefit; depreciation risk</p></div>
+    <div class="card"><h3>Home Loan Top-Up</h3><p class="meta">~$1,260/mo extra @ 6.0% p.a.</p><p class="pros">Lowest rate; flexible extra payments</p><p class="cons">Requires discipline; extends mortgage</p></div>
+    <div class="card"><h3>Novated Lease (FBT exempt)</h3><p class="meta">~$620/mo after-tax (est., pre-tax ~$950)</p><p class="pros">Tax-efficient; bundled running costs</p><p class="cons">Not your asset; job-change risk; check LCT threshold eligibility</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Watchlist & Changes</h2>
+  <div class="card">
+    <h3>Watchlist</h3>
+    <p>Tesla Model Y / 3 (verify pricing); Hyundai Ioniq 5/6; MG4 / MG ZS EV (lower budget); BYD Sealion 8 ($56,990 DA offer).</p>
+    <h3>Changed since last run</h3>
+    <p>First run (2026-10-04). Next: confirm Kia offer expiry (31 Aug 2026), BYD Aug–Sep offer status, Tesla pricing at tesla.com/au, exact VIC on-road costs.</p>
+  </div>
+</section>
+
+
+<section class="section">
+  <h2>Share</h2>
+  <p style="color:#a0a3ad;font-size:14px">Public link: <a style="color:#5e6ad2" href="compare.html">compare.html</a> | <a style="color:#5e6ad2" href="all_vehicles.html">all_vehicles.html</a> | <a style="color:#5e6ad2" href="ev_tracker_dashboard.html">dashboard</a>. To share publicly, deploy this folder via GitHub Pages or a simple tunnel.</p>
+  <button onclick="window.print()" style="margin-top:10px;padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:#f4f5f7;cursor:pointer">Print / PDF</button>
+</section>
+<footer class="footer">
+  Sources: thebeep.com.au (BYD Aug 2026); kia.com.au / Kia brochure (EV5 MY26); ATO FBT exemption; rates indicative (verify at lender). Unverified: Tesla pricing/specs; exact DC charge curves; VIC drive-away totals.
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Upcoming EV Releases (Australia)
+Sources: Auto Buyers Guide, RACV RoyalAuto, CarsGuide, TheDriven, CarExpert, Carsales, drive.com.au. All estimates; verify before purchase.
+- MG MG 4 FWD Update (Hatch): Late 2026 ~ ~$32-38k | Note: New front-wheel city variant; redesigned dash
+- Nissan Leaf Gen 3 (Fastback SUV): Late 2026 / 2027 ~ ~$55-65k | Note: Liquid-cooled battery; up to 604km WLTP
+- Mazda 6e (Sedan): Late 2026 / 2027 ~ Under $55k (est) | Note: Joint venture with Changan; 190kW; replaces Mazda 6
+- BMW iX3 Neue Klasse (SUV): Early 2027 ~ ~$100-110k | Note: Dedicated EV architecture; panoramic projection display; 345kW AWD
+- Smart #5 (SUV): Late 2026 ~ ~$55-70k | Note: Shares Zeekr 7X platform; up to 590km (94kWh NMC)
+- Hyundai Ioniq 6 N (Sedan): Late 2026 / 2027 ~ ~$115k | Note: Performance sedan; dual-motor 478kW
+- Cadillac Vistiq (Wagon): Early 2027 ~ ~$116k | Note: 3-row; 102kWh; 33-inch LED dash
+- Genesis GV60 Magma (SUV): Late 2026 / Q1 2027 ~ ~$130k | Note: 478kW AWD; 790Nm; 0-100 in 3.4s
+- Tesla Model Y L (6-seat) (SUV): Q2 2026 (confirmed) ~ $74,900 (before ORCs) | Note: 6-seat; first 3-row Model Y in AU
+- Geely EX2 (Hatch): Late July 2026 (confirmed) ~ $26,490 / $30,990 | Note: Complete (252km) / Inspire (345km)
+- Hyundai Elexio Elite (SUV): Q1 2026 / Q2 2026 (updated) ~ $59,990 DA intro / $58,990 +ORC | Note: 88kWh LFP; 546km WLTP; 160kW FWD
+- Volvo EX60 (SUV): Late 2026 / Q4 2026 ~ $86,990 / $101,990 | Note: Mid-size SUV; P6 RWD Ultra / P10 AWD Ultra
+- Toyota C-HR EV (SUV): Mid-2027 ~ Under $60k (est) | Note: 74.7kWh; 500km+; front motor 165kW
+- Toyota bZ4X Touring / updates (SUV): 2026-2027 ~ TBA | Note: Facelift / touring variants expected
+- Skoda Peaq (7-seater) / Epiq (SUV): Late 2026 / 2027 / 2027 ~ TBA / TBA | Note: Peaq flagship 7-seat; Epiq entry
+- Zeekr 7GT (Wagon): Q4 2026 / Q1 2027 (delivered) ~ $55-65k (est) | Note: Electric wagon; no direct rivals; 3 variants
+- Chery / iCar iCar V27 (SUV): Early 2027 ~ TBA | Note: Off-road EV; 81kWh; 430km; right-hand drive from Q1 2027
+- Mitsubishi ASX VR-e (SUV): Q4 2026 (Oct-Dec) ~ $46,800-58,900 (est, NZ ref) | Note: $57,990 NZ LS; GSR flagship
+- Hyundai Ioniq 3 (Hatch): Early 2027 ~ Upwards of ~$45-50k (est) | Note: Successor to i30; rivals MG4/Byd Dolphin
+- Mazda CX-6e (SUV): 2027 (arriving) ~ $53,990 (est) | Note: Mid SUV; 78kWh; 552km; AWD
+- Denza (BYD premium) B5 / B8 (SUV): 2026-2027 (launched) ~ $85,990 / TBA | Note: Luxury EV brand; B5/B8 first models

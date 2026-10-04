@@ -1,0 +1,111 @@
+brand,model,body,range_km,battery_kwh,dc_peak,price_from,source_url,notes
+BYD,Atto 1,Hatch,220,30.0,65,23990,evdrives.com.au,Micro
+BYD,Dolphin,Hatch,340,45.0,65,33300,finder.com.au,Small hatch
+BYD,Atto 3,SUV,420,50.0,80,43600,finder.com.au,Small SUV
+BYD,Seal,Sedan,500,82.0,150,54990,bydautomotive.com.au,Medium sedan
+BYD,Sealion 7 Premium,SUV,482,82.56,150,54990,carexpert/thebeep,Mid SUV RWD
+BYD,Sealion 7 Performance,SUV,456,82.56,150,63990,carexpert/thebeep,Mid SUV AWD
+BYD,Sealion 8 Dynamic,SUV,550,100.0,200,56990,thebeep.com.au,Newer large SUV
+MG,MG4 Urban,Hatch,316,51.0,117,31990,finder.com.au,Small hatch
+MG,ZS EV,SUV,350,50.0,80,40490,finder.com.au,Small SUV
+GWM,Ora,Hatch,310,48.0,67,33990,finder.com.au,Small hatch
+Geely,EX5,SUV,475,68.4,100,40990,thedriven,Mid SUV
+Hyundai,Inster,SUV,327,42.0,80,38990,thedriven,Micro SUV
+Hyundai,Kona Electric,SUV,460,64.8,100,46000,thedriven,Small SUV
+Hyundai,Ioniq 5,SUV,507,77.4,233,72000,thedriven,Mid SUV
+Hyundai,Ioniq 6,Sedan,614,77.4,233,68000,thedriven,Sedan
+Kia,EV3,SUV,604,81.4,128,47600,thedriven,Small SUV
+Kia,EV5 Air SR,SUV,400,64.2,140,49770,kia.com.au,Mid SUV
+Kia,EV5 Air LR,SUV,555,88.1,140,59990,kia.com.au,Mid SUV
+Kia,EV5 Earth AWD,SUV,500,88.1,140,64990,kia.com.au,Mid SUV AWD
+Kia,EV6,SUV,528,84.0,233,72590,thedriven,Mid SUV
+Kia,EV9,SUV,563,99.8,233,97000,thedriven,Large SUV
+Tesla,Model 3 RWD,Sedan,513,60.0,170,61990,evdrives.com.au,Sedan
+Tesla,Model Y RWD,SUV,466,62.5,170,71990,evdrives.com.au,Mid SUV
+Tesla,Model Y LR,SUV,600,81.0,250,79000,evdrives.com.au,Mid SUV
+XPeng,G6 Standard,SUV,435,60.0,215,48990,evdrives.com.au,Mid SUV
+XPeng,G6 Long,SUV,570,87.5,215,58000,evdrives.com.au,Mid SUV
+Toyota,bZ4X,SUV,591,74.7,150,69990,evdrives.com.au,Mid SUV
+VW,ID.4 Pro,SUV,544,77.0,175,59990,evdrives.com.au,Mid SUV
+VW,ID.5,Coupe,544,77.0,135,62990,evdrives.com.au,Coupe SUV
+Subaru,Solterra,SUV,466,74.7,150,71900,evdrives.com.au,Mid SUV AWD
+Mazda,6e,Sedan,560,78.0,200,49990,evdrives.com.au,Sedan
+Skoda,Enyaq,SUV,560,82.0,185,54990,evdrives.com.au,Mid SUV
+Nissan,Ariya,SUV,504,87.0,130,55840,evdrives.com.au,Mid SUV
+Volvo,EX30,SUV,480,69.0,153,49990,evdrives.com.au,Small SUV
+BMW,iX1,SUV,464,64.8,130,77900,evdrives.com.au,Small SUV
+BMW,i4,Sedan,448,66.4,180,88900,evdrives.com.au,Sedan
+Renault,Scenic E-Tech,SUV,625,87.0,150,55990,evdrives.com.au,Mid SUV
+BYD,Atto 1,Hatch,220,30.0,65,23990,evdrives.com.au,Micro
+BYD,Dolphin,Hatch,340,45.0,65,33300,finder.com.au,Small hatch
+BYD,Atto 3,SUV,420,50.0,80,43600,finder.com.au,Small SUV
+BYD,Seal,Sedan,500,82.0,150,54990,bydautomotive.com.au,Medium sedan
+BYD,Sealion 7 Premium,SUV,482,82.56,150,54990,carexpert/thebeep,Mid SUV RWD
+BYD,Sealion 7 Performance,SUV,456,82.56,150,63990,carexpert/thebeep,Mid SUV AWD
+BYD,Sealion 8 Dynamic,SUV,550,100.0,200,56990,thebeep.com.au,Newer large SUV
+MG,MG4 Urban,Hatch,316,51.0,117,31990,finder.com.au,Small hatch
+MG,ZS EV,SUV,350,50.0,80,40490,finder.com.au,Small SUV
+GWM,Ora,Hatch,310,48.0,67,33990,finder.com.au,Small hatch
+Geely,EX5,SUV,475,68.4,100,40990,thedriven,Mid SUV
+Hyundai,Inster,SUV,327,42.0,80,38990,thedriven,Micro SUV
+Hyundai,Kona Electric,SUV,460,64.8,100,46000,thedriven,Small SUV
+Hyundai,Ioniq 5,SUV,507,77.4,233,72000,thedriven,Mid SUV
+Hyundai,Ioniq 6,Sedan,614,77.4,233,68000,thedriven,Sedan
+Kia,EV3,SUV,604,81.4,128,47600,thedriven,Small SUV
+Kia,EV5 Air SR,SUV,400,64.2,140,49770,kia.com.au,Mid SUV
+Kia,EV5 Air LR,SUV,555,88.1,140,59990,kia.com.au,Mid SUV
+Kia,EV5 Earth AWD,SUV,500,88.1,140,64990,kia.com.au,Mid SUV AWD
+Kia,EV6,SUV,528,84.0,233,72590,thedriven,Mid SUV
+Kia,EV9,SUV,563,99.8,233,97000,thedriven,Large SUV
+Tesla,Model 3 RWD,Sedan,513,60.0,170,61990,evdrives.com.au,Sedan
+Tesla,Model Y RWD,SUV,466,62.5,170,71990,evdrives.com.au,Mid SUV
+Tesla,Model Y LR,SUV,600,81.0,250,79000,evdrives.com.au,Mid SUV
+XPeng,G6 Standard,SUV,435,60.0,215,48990,evdrives.com.au,Mid SUV
+XPeng,G6 Long,SUV,570,87.5,215,58000,evdrives.com.au,Mid SUV
+Toyota,bZ4X,SUV,591,74.7,150,69990,evdrives.com.au,Mid SUV
+VW,ID.4 Pro,SUV,544,77.0,175,59990,evdrives.com.au,Mid SUV
+VW,ID.5,Coupe,544,77.0,135,62990,evdrives.com.au,Coupe SUV
+Subaru,Solterra,SUV,466,74.7,150,71900,evdrives.com.au,Mid SUV AWD
+Mazda,6e,Sedan,560,78.0,200,49990,evdrives.com.au,Sedan
+Skoda,Enyaq,SUV,560,82.0,185,54990,evdrives.com.au,Mid SUV
+Nissan,Ariya,SUV,504,87.0,130,55840,evdrives.com.au,Mid SUV
+Volvo,EX30,SUV,480,69.0,153,49990,evdrives.com.au,Small SUV
+BMW,iX1,SUV,464,64.8,130,77900,evdrives.com.au,Small SUV
+BMW,i4,Sedan,448,66.4,180,88900,evdrives.com.au,Sedan
+Renault,Scenic E-Tech,SUV,625,87.0,150,55990,evdrives.com.au,Mid SUV
+BYD,Atto 2,Hatch,300,35.0,65,26000,evdrives.com.au,New small hatch
+BYD,Atto 1,Hatch,220,30.0,65,23990,evdrives.com.au,Micro
+BYD,Sealion 8,SUV,568,100.0,150,56990,thebeep.com.au,Large SUV
+BYD,Shark 6,Ute,520,100.0,150,57900,thebeep.com.au,PHEV/EV ute
+Tesla,Model S,Sedan,652,100.0,250,130000,evdrives.com.au,Luxury sedan
+Tesla,Model X,SUV,580,100.0,250,150000,evdrives.com.au,Luxury SUV
+Hyundai,Elexio,SUV,546,88.0,150,58990,carsales.com.au,New Chinese-built
+Hyundai,Kona Electric,SUV,460,64.8,100,46000,thedriven,Updated
+Kia,EV6 GT,SUV,484,84.0,233,72000,evdrives.com.au,Performance
+Kia,EV9 GT-Line,SUV,563,99.8,233,97000,evdrives.com.au,Large SUV flagship
+MG,Cyberster,Roadster,420,77.0,150,60000,evdrives.com.au,Sports EV
+MG,IM6,SUV,460,75.0,150,65000,evdrives.com.au,Mid SUV
+MG,IM5,Sedan,480,75.0,150,65000,evdrives.com.au,Sedan
+Mercedes,EQA,SUV,426,70.0,100,85800,evdrives.com.au,Luxury small SUV
+Mercedes,EQB,SUV,400,70.5,100,89100,evdrives.com.au,7-seat luxury
+Mercedes,EQE SUV,SUV,600,90.6,170,136600,evdrives.com.au,Mid luxury SUV
+BMW,i5,Sedan,581,81.2,205,155900,evdrives.com.au,Luxury sedan
+BMW,iX,SUV,602,105.0,195,130000,evdrives.com.au,Luxury SUV
+Porsche,Taycan,Sedan,484,93.4,270,181200,evdrives.com.au,Performance
+Porsche,Macan Electric,SUV,610,100.0,270,129800,evdrives.com.au,Luxury SUV
+Audi,Q4 e-tron,SUV,540,82.0,135,84900,evdrives.com.au,Luxury SUV
+Audi,Q6 e-tron,SUV,464,83.0,225,99900,evdrives.com.au,Luxury SUV
+Volvo,EX40,SUV,532,82.0,205,69990,evdrives.com.au,Mid luxury SUV
+Volvo,EX90,SUV,570,111.0,250,119900,evdrives.com.au,Luxury 7-seat
+Polestar,Polestar 2,Sedan,480,82.0,175,80000,evdrives.com.au,Luxury sedan
+Polestar,Polestar 4,SUV,580,100.0,200,118420,evdrives.com.au,Luxury SUV
+Subaru,Uncharted,SUV,466,74.7,150,70000,carsales.com.au,New electric
+Deepal,S07,SUV,475,80.0,100,46990,thedriven,Mid SUV
+Leapmotor,C10,SUV,420,67.9,180,45888,thedriven,Mid SUV
+Zeekr,7X,SUV,480,75.0,150,57900,thedriven,Mid luxury SUV
+Zeekr,X,SUV,405,61.0,230,48900,thedriven,Small luxury SUV
+Cupra,Born,Hatch,511,82.0,175,59990,evdrives.com.au,Sport hatch
+Renault,Megane E-Tech,Hatch,454,65.0,129,54990,evdrives.com.au,Mid hatch
+Renault,Scenic E-Tech,SUV,625,87.0,150,55990,thedriven,Mid SUV
+Nissan,Leaf (new),SUV,604,60.0,130,55000,autobuyersguide.com.au,New fastback
+Cadillac,Optiq,SUV,480,85.0,150,80000,evdrives.com.au,Luxury SUV

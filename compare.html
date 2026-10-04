@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare 3 EVs — Melbourne, VIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090a;--surface:#111113;--surface2:#16161a;--border:rgba(255,255,255,0.07);--text:#f4f5f7;--muted:#a0a3ad;--accent:#7170ff;--accent2:#5e6ad2;--radius:12px;--shadow:rgba(0,0,0,0.35) 0 16px 40px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;min-height:100vh}
+.container{max-width:1200px;margin:0 auto;padding:48px 24px}
+header{margin-bottom:28px}
+h1{font-size:42px;font-weight:600;letter-spacing:-1.6px;line-height:1.05;background:linear-gradient(135deg,#fff 40%,#828fff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{color:var(--muted);font-size:15px;margin-top:6px}
+select{background:#16161a;color:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 14px;font:inherit;margin-right:10px;margin-bottom:18px}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+h3{font-size:20px;font-weight:600;margin-bottom:16px}
+.row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px}
+.row span:first-child{color:var(--muted)}
+.footer{margin-top:32px;color:#62666d;font-size:12px;border-top:1px solid var(--border);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Compare 3 EVs</h1>
+  <p class="subtitle"><br><a href="alerts.html">Alerts</a><br><a href="all_vehicles.html">All</a><br><a href="ev_tracker_dashboard.html">Dashboard</a>Select any 3 vehicles. Page updates inline.</p>
+</header>
+
+<select id="v1" onchange="update()"><option value="BYD Sealion 7 Premium">BYD Sealion 7 Premium</option><option value="BYD Sealion 7 Performance">BYD Sealion 7 Performance</option><option value="Kia EV5 Air LR">Kia EV5 Air LR</option><option value="Kia EV5 Earth AWD">Kia EV5 Earth AWD</option></select>
+<select id="v2" onchange="update()"><option value="BYD Sealion 7 Premium">BYD Sealion 7 Premium</option><option value="BYD Sealion 7 Performance">BYD Sealion 7 Performance</option><option value="Kia EV5 Air LR" selected>Kia EV5 Air LR</option><option value="Kia EV5 Earth AWD">Kia EV5 Earth AWD</option></select>
+<select id="v3" onchange="update()"><option value="BYD Sealion 7 Premium">BYD Sealion 7 Premium</option><option value="Kia EV5 Air LR" selected>Kia EV5 Air LR</option><option value="Kia EV5 Air LR">Kia EV5 Air LR</option><option value="Kia EV5 Earth AWD">Kia EV5 Earth AWD</option></select>
+
+<div class="compare-grid" id="compareGrid"></div>
+
+<footer class="footer">Data from 2026-10-04 EV Tracker. Approximate values; verify before purchase.</footer>
+</div>
+
+<script>
+const data={
+"BYD Sealion 7 Premium":{price:"~$62k–$64k VIC",range:"482 km WLTP / ~430 km",dc:"~150 kW / 10–80% ~35m",warranty:"6yr/150k · 8yr/160k",pros:"Value leader; rotating screen; V2L; AWD option nearby",cons:"RWD only at this price; smaller service network"},
+"BYD Sealion 7 Performance":{price:"~$72k VIC",range:"456 km / ~400 km",dc:"~150 kW / 10–80% ~35m",warranty:"6yr/150k · 8yr/160k",pros:"390 kW AWD; 4.5s 0-100; same tech",cons:"Near budget cap; lower range than Premium"},
+"Kia EV5 Air LR":{price:"$59,990 DA",range:"555 km / ~520 km",dc:"140 kW / 10–80% ~36m",warranty:"7yr/unlimited · 8yr/160k (est)",pros:"Best range/value; 7yr warranty; 5-star ANCAP",cons:"FWD only at deal price; DC 140 kW (not 150)"},
+"Kia EV5 Earth AWD":{price:"$64,990 DA",range:"500 km / ~450 km",dc:"140 kW / 10–80% ~38m",warranty:"7yr/unlimited · 8yr/160k (est)",pros:"AWD 230kW; premium seats; smart tailgate",cons:"Over $65k without deal; less efficient"}
+};
+function render(){const a=document.getElementById('v1').value,b=document.getElementById('v2').value,c=document.getElementById('v3').value;const html=[a,b,c].map(k=>{
+const d=data[k];
+return `<div class="card"><h3>${k}</h3>
+<div class="row"><span>Drive-away</span><span>${d.price}</span></div>
+<div class="row"><span>Range</span><span>${d.range}</span></div>
+<div class="row"><span>DC / AC</span><span>${d.dc}</span></div>
+<div class="row"><span>Warranty</span><span>${d.warranty}</span></div>
+<div class="row"><span>Pros</span><span style="color:#a6e8b8">${d.pros}</span></div>
+<div class="row"><span>Cons</span><span style="color:#f0a0a0">${d.cons}</span></div>
+</div>`;}).join('');
+document.getElementById('compareGrid').innerHTML=html;}
+function update(){render();}
+render();
+</script>
+<div style="margin-top:28px;padding:16px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:13px;color:#a0a3ad"><strong>Note:</strong> Prices are approximate drive-away (VIC). Verify current offers at dealer/manufacturer site before purchase. Discounts and interest-rate changes tracked in DB.</div>
+</body>
+</html>

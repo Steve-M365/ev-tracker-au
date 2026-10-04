@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alerts — EV Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090a;--surface:#111113;--border:rgba(255,255,255,0.07);--text:#f4f5f7;--muted:#a0a3ad;--accent:#7170ff;--radius:12px;--shadow:rgba(0,0,0,0.35) 0 16px 40px;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;min-height:100vh;padding:48px 24px}
+.container{max-width:800px;margin:0 auto}
+h1{font-size:42px;font-weight:600;letter-spacing:-1.6px;background:linear-gradient(135deg,#fff 40%,#828fff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.alert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}
+.alert-card h3{font-size:15px;font-weight:600;margin-bottom:8px;color:#fff}
+.alert-card p{font-size:14px;color:var(--muted)}
+.nav{margin-top:24px;font-size:13px}
+.nav a{color:#7170ff;text-decoration:none;margin-right:16px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Alerts</h1>
+<div class="nav"><a href="ev_tracker_dashboard.html">Dashboard</a><a href="all_vehicles.html">All Vehicles</a><a href="compare.html">Compare 3</a></div>
+<div class="alert-card"><h3>SALE — Kia EV5 Deal</h3><p>Kia EV5 Air LR $59,990 DA (offer to 31 Aug 2026). Verify renewal. BYD Aug-Sep drive-away offers ending.</p></div>
+<div class="alert-card"><h3>RATE — Favorable Threshold</h3><p>Car loan &lt;7.0% or green loan &lt;6.5% = favorable. Compare lenders before applying.</p></div>
+<div class="alert-card"><h3>FBT — Novated Lease Check</h3><p>Eligible EV must be under LCT threshold ($89,332 FY25-26). Confirm exact model price.</p></div>
+<div class="nav" style="margin-top:32px;border-top:1px solid var(--border);padding-top:16px;color:#62666d;font-size:12px">
+DB: ev_tracker.db | Refresh: refresh_ev_tracker.sh (cron 07:00 daily) | Sources: thebeep.com.au / kia.com.au / ATO
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# EV Tracker App
+- Dashboard: ev_tracker_dashboard.html
+- All vehicles: all_vehicles.html
+- Compare 3: compare.html
+- Upcoming: upcoming_models.md
+- Price DB: ev_tracker.db
+- Price history CSV: full_market.csv
+- Refresh: refresh_ev_tracker.sh (cron 07:00 daily)
+- Rate comparison: comparison_rates.md
+- Sharing: open files locally; for public URL deploy folder to GitHub Pages or run `python3 -m http.server 8000` then tunnel.
+- Sources: evdrives.com.au / thedriven.io / kia.com.au / bydautomotive.com.au / tesla.com/au / carexpert.com.au / drive.com.au / finder.com.au / carsguide.com.au / thebeep.com.au / ATO / treasury.gov.au
