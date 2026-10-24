@@ -1,0 +1,8 @@
+[2026-10-24] Refresh: check ev_tracker.db pricing & upcoming_models.md; review comparison_rates.md; verify open alerts.
+[2026-10-24] ACTION: confirm Kia EV5 offer status (kia.com.au), BYD offers (thebeep.com.au), Tesla pricing (tesla.com/au), lender rates (RateCity/Canstar), ATO FBT threshold.
+[2026-10-24] Open DB: sqlite3 /home/a-steve/workspace/ev_tracker.db 'SELECT * FROM price_history;' >> /home/a-steve/workspace/refresh_log.txt
+[2026-10-24] Alerts: 
+[2026-10-24] Refresh: check ev_tracker.db pricing & upcoming_models.md; review comparison_rates.md; verify open alerts.
+[2026-10-24] ACTION: confirm Kia EV5 offer status (kia.com.au), BYD offers (thebeep.com.au), Tesla pricing (tesla.com/au), lender rates (RateCity/Canstar), ATO FBT threshold.
+[2026-10-24] Open DB: sqlite3 /home/a-steve/workspace/ev_tracker.db 'SELECT * FROM price_history;' >> /home/a-steve/workspace/refresh_log.txt
+[2026-10-24] Alerts: 
