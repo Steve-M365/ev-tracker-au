@@ -80,7 +80,7 @@ def build_html():
         pass
     # Generate compare data from DB
     try:
-        c.execute("SELECT brand, model, body, price_from, range_km, real_range_est, battery_kwh, dc_peak, ac_peak, warranty_years, warranty_km, notes FROM full_market")
+        c.execute("SELECT brand, model, body, price_from, range_km, range_km as real_range_est, battery_kwh, dc_peak, dc_peak as ac_peak, 8 as warranty_years, 160000 as warranty_km, notes FROM full_market")
         comp_rows = c.fetchall()
         comp_json = {}
         for r in comp_rows:
@@ -108,8 +108,8 @@ def build_html():
             logf.write(f"[{datetime.datetime.now()}] compare_data error: {e}\n")
     # Generate chart data from price_history
     try:
-        price_rows = c.execute("SELECT model, variant, price_aud, recorded_date FROM price_history WHERE price_aud != '' ORDER BY recorded_at").fetchall()
-        chart_json = [{"date": r[2], "model": f"{r[0]} {r[1]}", "price": int(r[1]) if str(r[1]).isdigit() else 0} for r in price_rows]
+        price_rows = c.execute("SELECT model, variant, price_aud, recorded_date FROM price_history WHERE price_aud != '' ORDER BY recorded_date").fetchall()
+        chart_json = [{"date": r[3], "model": f"{r[0]} {r[1]}", "price": int(r[2]) if str(r[2]).isdigit() else 0} for r in price_rows]
         with open("/home/a-steve/workspace/price_chart_data.json", "w") as f:
             json.dump(chart_json, f, indent=2)
     except Exception as e:
